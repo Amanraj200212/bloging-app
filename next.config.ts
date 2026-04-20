@@ -22,6 +22,11 @@ const nextConfig: NextConfig = {
         hostname: "keen-camel-412.convex.cloud",
         protocol: "https",
         port: "",
+      },
+      {
+        hostname: "grand-trout-56.convex.cloud",
+        protocol: "https",
+        port: "",
       }
     ]
   },

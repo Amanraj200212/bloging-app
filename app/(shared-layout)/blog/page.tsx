@@ -16,9 +16,6 @@ export const metadata: Metadata = {
   authors: [{name: "Aman Gupta"}]
 }
 
-// export const dynamic = "force-static";
-// export const revalidate = 0;
-
 export default  function BlogPage(){
   return (
     <div className="py-12">

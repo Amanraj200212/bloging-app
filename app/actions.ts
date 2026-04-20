@@ -6,7 +6,7 @@ import { fetchMutation } from "convex/nextjs";
 import { api } from "@/convex/_generated/api";
 import { redirect } from "next/navigation";
 import { getToken } from "@/lib/auth-server";
-import { revalidatePath, updateTag } from "next/cache";
+import { updateTag } from "next/cache";
 
 // we have also to validate the data on the server side after validate from client side mutation
 export async function createBlogAction(values: z.infer<typeof postSchema>){
@@ -63,7 +63,5 @@ export async function createBlogAction(values: z.infer<typeof postSchema>){
     
   //make blog cache ( check blog page  )
   updateTag("blog");
-  // revalidatePath("/blog");
-  
   return redirect("/blog");
 }
