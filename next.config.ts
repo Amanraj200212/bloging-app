@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 
 const nextConfig: NextConfig = {
-  // cacheComponents: true,
+  cacheComponents: true,
 
   //that increate uplaod limit later i  this
   experimental: {
