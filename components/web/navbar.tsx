@@ -26,8 +26,8 @@ export function Navbar() {
 
         <div className="flex items-center gap-2">
           <Link className={buttonVariants({variant: "ghost"})} href="/">Home</Link>
-          <Link className={buttonVariants({variant: "ghost"})} href="/blog">Blog</Link>
-          <Link className={buttonVariants({variant: "ghost"})} href="/create">Create</Link>          
+          <Link className={buttonVariants({variant: "ghost"})} href="/blog" prefetch={false}>Blog</Link>
+          <Link className={buttonVariants({variant: "ghost"})} href="/create" prefetch={false}>Create</Link>          
         </div>
       </div>
 
@@ -52,7 +52,8 @@ export function Navbar() {
             fetchOptions: {
               onSuccess: () =>{
                 toast.success("Logged out successfully!");
-                router.push("/");
+                router.replace("/");
+                router.refresh();
               },
               onError: (error) => {
                 toast.error(error.error.message);

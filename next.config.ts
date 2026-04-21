@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 
 const nextConfig: NextConfig = {
-  cacheComponents: true,
+  // cacheComponents: true,
 
   //that increate uplaod limit later i  this
   experimental: {
@@ -23,11 +23,6 @@ const nextConfig: NextConfig = {
         protocol: "https",
         port: "",
       },
-      {
-        hostname: "grand-trout-56.convex.cloud",
-        protocol: "https",
-        port: "",
-      }
     ]
   },
 };

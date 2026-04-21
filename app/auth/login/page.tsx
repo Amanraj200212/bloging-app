@@ -17,6 +17,7 @@ import z from "zod";
 
 export default function Login(){
   const [isPending, startTransition] = useTransition();
+  
 
   const router = useRouter();
 
@@ -37,7 +38,8 @@ export default function Login(){
         fetchOptions: {
           onSuccess: () => {
             toast.success("Logged in successfully!");
-            router.push("/");
+            router.replace("/");
+            router.refresh();
           },
           onError: (error) => {
             toast.error(error.error.message);

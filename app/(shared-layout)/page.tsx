@@ -26,7 +26,7 @@ export default function Home() {
           </p>
           <div className="flex items-center justify-center gap-4 p-4">
             <Button asChild size="lg" className="rounded-full p-4">
-              <Link href="/blog" className="text-white">Start Reading</Link>
+              <Link href="/blog" className="text-white" prefetch={false}>Start Reading</Link>
             </Button>
             <Button
               asChild
@@ -34,7 +34,7 @@ export default function Home() {
               size="lg"
               className="rounded-full"
             >
-              <Link href="/create">Write a Post</Link>
+              <Link href="/create" prefetch={false}>Write a Post</Link>
             </Button>
           </div>
         </div>
@@ -86,6 +86,7 @@ export default function Home() {
             <CardFooter>
               <Link
                 href="/blog"
+                prefetch={false}
                 className={buttonVariants({
                   variant: "outline",
                   className: "w-full",
@@ -113,6 +114,7 @@ export default function Home() {
             <CardFooter>
               <Link
                 href="/create"
+                prefetch={false}
                 className={buttonVariants({
                   variant: "outline",
                   className: "w-full",
