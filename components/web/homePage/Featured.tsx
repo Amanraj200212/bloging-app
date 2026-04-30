@@ -12,6 +12,7 @@ const featured: Post[] = [
     date: "Apr 24, 2026",
     category: "Tech",
     image: "/images/blog-1.jpg",
+    url: "https://bloging-app-ruby.vercel.app/blog/j5725enaktm3tk9hhmf6jvknyd85vzbj",
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const featured: Post[] = [
     date: "Apr 21, 2026",
     category: "AI",
     image: "/images/blog-2.jpg",
+    url: "https://bloging-app-ruby.vercel.app/blog/j570qxa12gj61q0qytyx8ar5qd85vjh0",
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const featured: Post[] = [
     date: "Apr 18, 2026",
     category: "Lifestyle",
     image: "/images/blog-3.jpg",
+    url: "https://bloging-app-ruby.vercel.app/blog/j57dnb9mtqxz9g62xz3xp5wkt985v6mv",
   },
 ];
 

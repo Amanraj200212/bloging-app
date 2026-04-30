@@ -12,6 +12,7 @@ export type Post = {
   date: string;
   category: string;
   image: string;
+  url: string;
 };
 
 export default function BlogCard({
@@ -24,7 +25,7 @@ export default function BlogCard({
   return (
     <article
       style={{ animationDelay: `${delay * 100}ms` }}
-      className="group animate-fade-up flex flex-col overflow-hidden rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.18)] cursor-pointer"
+      className="group animate-fade-up flex flex-col overflow-hidden rounded-2xl shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_rgba(0,0,0,0.18)]"
     >
       <Card className="pt-0">
         <div className="relative h-48 w-full overflow-hidden">
@@ -43,8 +44,8 @@ export default function BlogCard({
         </div>
 
         <CardContent>
-          <Link href={`/blog`}>
-            <h1 className="text-2xl h-20 font-bold hover:text-primary">{post.title}</h1>
+          <Link href={`${post.url}`}>
+            <h1 className="text-2xl h-20 font-bold cursor-pointer hover:text-primary ">{post.title}</h1>
           </Link>
           <p className="text-muted-foreground line-clamp-3 h-15">{post.excerpt}</p>
         </CardContent>
@@ -55,7 +56,7 @@ export default function BlogCard({
           </div>
 
           <Link
-            href="#"
+            href={`${post.url}`}
             className="inline-flex items-center gap-1 text-sm font-medium transition-all hover:gap-2 hover:text-primary"
           >
             Read
