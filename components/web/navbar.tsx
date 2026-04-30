@@ -36,16 +36,6 @@ export function Navbar() {
           <SearchInput />
         </div>
         
-        {/* {session?.user ? (
-          <p>sign out</p>
-        ) : (
-          <div>
-            <p>signup</p>
-            <p>login in</p>
-            
-          </div>
-        )} */}
-
         {isLoading ? null : isAuthenticated ? (
           <Button className="text-white hover: cursor-pointer" onClick={() => authClient.signOut({
             // for showing toast notification on successful logout

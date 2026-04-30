@@ -1,3 +1,4 @@
+import Link from "next/link";
 import BlogCard,{ type Post } from "./BlogCard";
 
 
@@ -42,19 +43,20 @@ export default function Featured() {
     >
       <div className="mb-12 flex items-end justify-between gap-6">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b8623a]">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             Featured
           </p>
-          <h2 className="mt-3 font-serif text-3xl font-medium text-neutral-900 sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 font-serif text-3xl font-medium  sm:text-4xl lg:text-5xl">
             Editor&apos;s picks
           </h2>
         </div>
-        <a
-          href="#latest"
-          className="story-link hidden text-sm font-medium text-neutral-500 sm:inline-block"
+        <Link
+          href="/blog"
+          className="story-link hidden text-sm font-medium text-muted-foreground sm:inline-block"
+          prefetch={false}
         >
           View all
-        </a>
+        </Link>
       </div>
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
