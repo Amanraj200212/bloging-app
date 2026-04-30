@@ -7,7 +7,6 @@ import { Metadata } from "next";
 import { cacheLife, cacheTag } from "next/cache";
 import Image from "next/image";
 import Link from "next/link";
-import { connection } from "next/server";
 import { Suspense } from "react";
 
 export const metadata: Metadata = {
@@ -37,11 +36,10 @@ export default  function BlogPage(){
 // Calling fetchqueries from server side rendring data (docs)
 async function LoadBlogList(){
 
-  // //make blog page cacahe
-  // "use cache";
-  // cacheLife("hours");
-  // cacheTag("blog");
-  await connection()
+  //make blog page cacahe
+  "use cache";
+  cacheLife("hours");
+  cacheTag("blog");
   const dataOfPosts = await fetchQuery(api.posts.getPosts);
 
   return (
