@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import BlogCard, { type Post } from "./BlogCard";
+import { Button } from "@/components/ui/button";
 
 const latest: Post[] = [
   {
@@ -79,7 +80,7 @@ export default function Latest() {
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b8623a]">
           Latest
         </p>
-        <h2 className="mt-3 font-serif text-3xl font-medium text-neutral-900 sm:text-4xl">
+        <h2 className="mt-3 font-serif text-3xl font-medium sm:text-4xl">
           Fresh from the journal
         </h2>
       </div>
@@ -91,12 +92,13 @@ export default function Latest() {
       </div>
 
       <div className="mt-14 flex justify-center">
-        <button
+        <Button
           onClick={() => setShowAll((s) => !s)}
-          className="h-12 rounded-full border border-[#ebe4d8] bg-white px-8 text-sm font-medium text-neutral-900 shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all hover:-translate-y-0.5 hover:border-[#b8623a] hover:text-[#b8623a]"
+          variant="outline"
+          className="h-12 rounded-full px-8 text-sm font-medium  shadow-[0_2px_8px_rgba(0,0,0,0.04)] transition-all hover:-translate-y-0.5 "
         >
           {showAll ? "Show less" : "Load more"}
-        </button>
+        </Button>
       </div>
     </section>
   );

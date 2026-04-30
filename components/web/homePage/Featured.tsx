@@ -43,7 +43,7 @@ export default function Featured() {
     >
       <div className="mb-12 flex items-end justify-between gap-6">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#b8623a]">
             Featured
           </p>
           <h2 className="mt-3 font-serif text-3xl font-medium  sm:text-4xl lg:text-5xl">
@@ -61,7 +61,7 @@ export default function Featured() {
 
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
         {featured.map((post, i) => (
-          <BlogCard key={post.id} post={post} delay={i} priority={i === 0} />
+          <BlogCard key={post.id} post={post} delay={i} />
         ))}
       </div>
     </section>

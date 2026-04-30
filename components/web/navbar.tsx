@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="flex items-center gap-8">
         <Link href="/">
           <h1 className="text-3xl font-bold">
-            Web<span className="text-primary">App</span>
+            Blog<span className="text-primary">App</span>
           </h1>
         </Link>
 

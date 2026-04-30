@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Loader2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 type Status =
   | { kind: "idle" }
@@ -49,11 +50,11 @@ export default function Newsletter() {
         />
 
         <div className="relative">
-          <h2 className="font-serif text-3xl font-medium text-neutral-900 sm:text-4xl lg:text-5xl">
+          <h2 className="text-3xl font-medium text-neutral-900 sm:text-4xl lg:text-5xl">
             Stay updated with the latest blogs
           </h2>
           <p className="mx-auto mt-4 max-w-md text-neutral-500">
-            One thoughtful email each week. No spam, no noise — just good writing.
+            One thoughtful email each week. No spam, no noise — just good writing and blogs.
           </p>
 
           <form
@@ -76,10 +77,11 @@ export default function Newsletter() {
               aria-label="Email address"
               className="h-12 flex-1 rounded-full border border-[#ebe4d8] bg-white px-5 text-base text-neutral-900 placeholder:text-neutral-400 shadow-[0_2px_8px_rgba(0,0,0,0.04)] outline-none focus-visible:ring-2 focus-visible:ring-[#b8623a]"
             />
-            <button
+            <Button
               type="submit"
+              variant="default"
               disabled={status.kind === "loading"}
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#b8623a] px-7 text-base font-medium text-white shadow-[0_12px_40px_-12px_rgba(184,98,58,0.45)] transition-all hover:-translate-y-0.5 hover:bg-[#a4552f] disabled:opacity-70"
+              className=" h-12 text-white bg-[#fa66ff] rounded-4xl px-7 shadow-[0_12px_40px_-12px_rgba(184,98,58,0.45)] transition-all hover:bg-primary hover:-translate-y-0.5 hover:cursor-pointer disabled:opacity-70"
             >
               {status.kind === "loading" ? (
                 <>
@@ -89,7 +91,7 @@ export default function Newsletter() {
               ) : (
                 "Subscribe"
               )}
-            </button>
+            </Button>
           </form>
 
           <div

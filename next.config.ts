@@ -23,6 +23,11 @@ const nextConfig: NextConfig = {
         protocol: "https",
         port: "",
       },
+      {
+        hostname: "grand-trout-56.convex.cloud",
+        protocol: "https",
+        port: "",
+      },
     ]
   },
 };

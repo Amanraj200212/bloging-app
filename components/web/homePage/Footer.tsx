@@ -13,9 +13,9 @@ export default function Footer() {
           <span className="text-sm text-muted-foreground">-share your tthoughts</span>
         </div>
         <nav className="flex items-center gap-6 text-sm text-muted-foreground">
-          <Link className="story-link hover:text-primary" href="#">About</Link>
-          <Link className="story-link hover:text-primary" href="#">Contact</Link>
-          <Link className="story-link hover:text-primary" href="#">Donate us</Link>
+          <Link className="story-link hover:text-primary" href="/about">About</Link>
+          <Link className="story-link hover:text-primary" href="/contact">Contact</Link>
+          <Link className="story-link hover:text-primary" href="/donate">Donate us</Link>
         </nav>
         
         <div className="flex items-center justify-center gap-4 text-muted-foreground">
