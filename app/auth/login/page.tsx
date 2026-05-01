@@ -9,7 +9,6 @@ import { authClient } from "@/lib/auth-client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader2 } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -18,9 +17,6 @@ import z from "zod";
 export default function Login(){
   const [isPending, startTransition] = useTransition();
   
-
-  const router = useRouter();
-
   const form = useForm({
       // herer resolver used for validation of the form data using zod schema 
       resolver: zodResolver(logInSchema),
@@ -38,8 +34,13 @@ export default function Login(){
         fetchOptions: {
           onSuccess: () => {
             toast.success("Logged in successfully!");
-            router.replace("/");
-            router.refresh();
+            const callbackUrl = new URLSearchParams(window.location.search).get("callbackUrl");
+            const redirectTo =
+              callbackUrl?.startsWith("/") && !callbackUrl.startsWith("//")
+                ? callbackUrl
+                : "/";
+
+            window.location.assign(redirectTo);
           },
           onError: (error) => {
             toast.error(error.error.message);
